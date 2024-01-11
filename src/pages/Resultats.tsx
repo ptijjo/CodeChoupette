@@ -1,9 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { avis } from '../data/Data';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const Resultats : React.FC= () => {
+interface MyCarouselProps {
+
+  showIndicators?: boolean;
+  autoPlay?: boolean;
+  interval?: number;
+  infiniteLoop?: boolean;
+}
+
+const Resultats: React.FC<MyCarouselProps> = ({
+  showIndicators = true,
+  autoPlay = true,
+  interval = 2000,
+  infiniteLoop = true,
+}) => {
   return (
-    <div className='resultats'>
-      avant/apres
+    <div className='resultats' id='results'>
+      <Carousel showIndicators={showIndicators} autoPlay={autoPlay} interval={interval} infiniteLoop={infiniteLoop} className='carousel-avis'>
+        {
+          avis.map((slide) => (
+            <div key={slide.id} className='photo'>
+              <img src={slide.imageUrl} alt={slide.nom} />
+              <p className='description'>{slide.avis}</p>
+            </div>
+          ))
+        }
+      </Carousel>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Presentation: React.FC = () => {
   return (
-    <div className='presentation'>
+    <div className='presentation' id='presentation'>
       <div className='photo_presentation'>
         <div className='cadre_photo'>
           <img src="" alt="Denise_Bangoura" className='photo'/>

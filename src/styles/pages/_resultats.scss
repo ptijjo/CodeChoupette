@@ -8,4 +8,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .carousel-avis{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+.carousel-status{
+    display: none;
 }
